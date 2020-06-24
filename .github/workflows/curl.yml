@@ -1,0 +1,24 @@
+on: push
+jobs:
+  Requests:
+     name: Request1
+     runs-on: self-hosted
+     steps:
+        - uses: actions/checkout@v2
+        - name: Run sh file
+          continue-on-error: true
+          #checking
+          run: |
+             chmod +x Script1.sh
+             ./Script1.sh $token ApplicationManifest.yml SecurityManifest.yml
+          env:
+            token: 29f238df-7432-49c0-86ff-a92b11a113ea
+             
+ 
+      
+      
+      
+      
+      
+      
+    

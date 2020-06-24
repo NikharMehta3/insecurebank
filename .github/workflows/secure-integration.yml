@@ -1,0 +1,73 @@
+name: CI
+on: 
+
+jobs:
+ build-and-run:
+ # Self-hosted runner
+  runs-on: ubuntu-latest
+  
+  steps:
+# Checkout
+
+  - uses: actions/checkout@v1
+  
+  - name: Build Code
+    run: mvn clean package
+    
+# SAST-scan, report also includes findbugs
+  - name: SAST-scan 
+    uses: AppThreat/sast-scan-action@1.0.2
+    with:
+       output: sast-reports
+       type: java
+      
+# Conditional statements
+  - name: SAST scan succeeded
+    if: success()
+    
+# Use of secrets
+    uses: Azure/docker-login@v1
+    with:
+       username: nikharmehta
+       password: ${{ secrets.Docker_Hub_Password }}
+     
+  - name: SAST scan failed
+    if: failure()
+    run: echo 'SAST-scan failed'
+    
+# Upload artifact
+  - name: SAST scan report
+    if: always()
+    uses: actions/upload-artifact@v1.0.0
+    with:
+        name: sast-reports
+        path: sast-reports   
+  
+# Use of secrets
+  - name: Docker login
+    uses: Azure/docker-login@v1
+    with:
+       username: nikharmehta
+       password: ${{ secrets.Docker_Hub_Password }}
+       
+# User parameters      
+  - name: Set selected color
+    run: echo '::set-env name=SELECTED_COLOR::green'
+  - name: Get color
+    run: echo 'The selected color is' $SELECTED_COLOR
+      
+# Use of functions
+  - name: contain function
+    if: ${{ contains('Hello world', 'llo') }}
+    run: echo 'llo is a part of Hello World'
+    
+  - name: startsWith function
+    if: ${{ startsWith('Hello world', 'He') }}
+    run: echo 'Hello World starts with He'
+    
+  - name: endsWith function
+    if: ${{ endsWith('Hello world', 'ld') }}
+    run: echo 'Hello World ends with ld'
+     
+  - name: format function
+    run: echo '${{ format('{{Hello {0} {1} {2}!}}', 'Nikhar', 'Ajith', 'Sneha') }}'

@@ -1,0 +1,36 @@
+application:
+  appId: Insecurebank1
+  assetId: Insecurebank1
+  appName: Insecurebank1
+  sdlcType: EDM
+  appType: Webapp
+  webservice: false
+  restApi: true
+  microservice: false
+  projectLanguage: Java
+  frameworks: 
+   - Spring security
+   - Hibernate
+  platformVersion: Java 8
+  buildSystem: Maven
+  riskMatrixRevision: Rev1.0
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
+  sensitivePackagePattern: ".*(\\+\\+\\+.*(org\\/hdivsamples\\/security)).*"
+  fileChangeThreshold: 20
+
+environment:
+  scm: external
+  gitlabbHostUrl: "https://gitlab.com/"
+  gitlabToken: ${{ secrets.Gitlabtoken }}
+  scmOwner: "Nikhar-Mehta"
+  scmRepositoryName: "Demo-project"
+  scmBranchName: "master"
+  
+  testDeploymentRoot: "Stargazer-IQ"
+  imChannelIdentifier: "#stargazer-notifications"
+  jiraProjectName: "DEM"
+  jiraIssuesQuery: "resolution = \"Unresolved\" AND labels in (Security, Defect)"
+  jiraApiUrl: https://demo-sig-jira.atlassian.net/rest/api/latest/
+  jiraUserName: "skokil@synopsys.com"
+  jiraAuthToken: "CGdI09hLOMzzTssfoAWc0F90"
+ 
