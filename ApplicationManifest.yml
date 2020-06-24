@@ -23,9 +23,7 @@ environment:
   scmOwner: "NikharMehta3"
   scmRepositoryName: "insecurebank"
   scmBranchName: "master"
-  codePatch: diff --git a/ApplicationManifest.yml b/ApplicationManifest.yml index b00922f..08af944 100644
---- a/ApplicationManifest.yml
-+++ b/ApplicationManifest.yml
+  codePatch: diff --git a/ApplicationManifest.yml b/ApplicationManifest.yml index b00922f..08af944 100644 \--- a/ApplicationManifest.yml \+++ b/ApplicationManifest.yml
   testDeploymentRoot: "Stargazer-IQ"
   imChannelIdentifier: "#stargazer-notifications"
   jiraProjectName: "DEM"
