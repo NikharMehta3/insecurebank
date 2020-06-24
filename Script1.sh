@@ -6,6 +6,7 @@ echo $(ruby -ryaml -rjson -e \
 "puts JSON.pretty_generate(YAML.load_file('$2'))" ) >> data.json
 echo $(ruby -ryaml -rjson -e \
 "puts JSON.pretty_generate(YAML.load_file('$3'))" ) >> data.json
+echo $data.json
 
 echo "Application Onboarding"
 app1=$(curl -X POST  -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/application/update )
