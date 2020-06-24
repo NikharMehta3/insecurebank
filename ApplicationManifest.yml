@@ -20,10 +20,8 @@ application:
 
 environment:
   scm: external
-  gitlabbHostUrl: "https://gitlab.com/"
-  gitlabToken: ${{ secrets.Gitlabtoken }}
-  scmOwner: "Nikhar-Mehta"
-  scmRepositoryName: "Demo-project"
+  scmOwner: "NikharMehta3"
+  scmRepositoryName: "insecurebank"
   scmBranchName: "master"
   
   testDeploymentRoot: "Stargazer-IQ"
