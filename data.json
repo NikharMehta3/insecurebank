@@ -1,1 +1,82 @@
-
+{
+  "application": {
+    "appId": "Insecurebank1",
+    "assetId": "Insecurebank1",
+    "appName": "Insecurebank1",
+    "sdlcType": "EDM",
+    "appType": "Webapp",
+    "webservice": false,
+    "restApi": true,
+    "microservice": false,
+    "projectLanguage": "Java",
+    "frameworks": [
+      "Spring security",
+      "Hibernate"
+    ],
+    "platformVersion": "Java 8",
+    "buildSystem": "Maven",
+    "riskMatrixRevision": "Rev1.0",
+    "sourceFilePattern": ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*",
+    "sensitivePackagePattern": ".*(\\+\\+\\+.*(org\\/hdivsamples\\/security)).*",
+    "fileChangeThreshold": 20
+  },
+  "environment": {
+    "scm": "external",
+    "scmOwner": "NikharMehta3",
+    "scmRepositoryName": "insecurebank",
+    "scmBranchName": "master",
+    "codePatch": "diff --git a/ApplicationManifest.yml b/ApplicationManifest.yml index b00922f..08af944 100644 \\--- a/ApplicationManifest.yml \\+++ b/ApplicationManifest.yml",
+    "testDeploymentRoot": "Stargazer-IQ",
+    "imChannelIdentifier": "#stargazer-notifications",
+    "jiraProjectName": "DEM",
+    "jiraIssuesQuery": "resolution = \"Unresolved\" AND labels in (Security, Defect)",
+    "jiraApiUrl": "https://demo-sig-jira.atlassian.net/rest/api/latest/",
+    "jiraUserName": "skokil@synopsys.com",
+    "jiraAuthToken": "CGdI09hLOMzzTssfoAWc0F90"
+  },
+  "security": {
+    "pipeline": {
+      "type": "Inline",
+      "toolchain": "Synopsys"
+    },
+    "sastScan": {
+      "enabled": true,
+      "rescanThreshold": 10
+    },
+    "scaScan": {
+      "enabled": false,
+      "rescanThreshold": 10
+    },
+    "dastScan": {
+      "enabled": false,
+      "rescanThreshold": 10
+    },
+    "sastPlusM": false,
+    "dastPlusM": false
+  },
+  "buildBreaker": {
+    "coverity": {
+      "statusQuery": "new",
+      "overallSeverityQuery": "high",
+      "categoryQuery": "cross-site scripting",
+      "categorySeverityQuery": "medium"
+    },
+    "blackduck": {
+      "statusQuery": "new",
+      "overallSeverityQuery": "medium",
+      "cveQuery": "",
+      "componentQuery": ""
+    },
+    "seeker": {
+      "statusQuery": "new",
+      "overallSeverityQuery": "critical",
+      "categoryQuery": "SQL Injection",
+      "categorySeverityQuery": "high"
+    }
+  },
+  "sct": {
+    "enableJira": "true",
+    "jiraIssueType": "Bug",
+    "enableBuildBreaker": "true"
+  }
+}
