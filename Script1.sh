@@ -22,4 +22,5 @@ p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:applicat
 
 echo $p
 
-grep -oE '"security": {"sastScan": {"enabled":' db.out
+op="$( upsc p@localhost | grep sastScan )"
+echo %op
