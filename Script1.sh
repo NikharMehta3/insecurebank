@@ -25,6 +25,6 @@ echo $p >> result.json
 var= ruby script1.rb
 echo $var
 
-if [ $var==true ]
+if [ $var=="true" ]
 then 
    echo "Perform SAST Scan"
