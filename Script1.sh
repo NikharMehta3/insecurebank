@@ -28,3 +28,4 @@ echo $var
 if [ $var=="true" ]
 then 
    echo "Perform SAST Scan"
+fi
