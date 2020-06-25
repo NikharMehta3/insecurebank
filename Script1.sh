@@ -21,3 +21,5 @@ echo "Prescription"
 p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/manifest/update)
 
 echo $p
+
+grep -oE '"security": {"sastScan": {"enabled":' db.out
