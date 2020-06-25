@@ -22,5 +22,5 @@ p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:applicat
 
 echo $p
 
-op="$( upsc p@localhost | grep sastScan )"
-echo %op
+op=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/manifest/update)
+printf "%s\n" "$op"
