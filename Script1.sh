@@ -21,6 +21,6 @@ echo "Prescription"
 p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/manifest/update)
 
 echo $p
-
-op=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/manifest/update)
-printf "%s\n" "$op"
+echo $p >> result.json
+var= ruby script1.rb
+echo $var
