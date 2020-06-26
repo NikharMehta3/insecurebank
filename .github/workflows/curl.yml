@@ -21,6 +21,10 @@ jobs:
             echo "heyy"
             echo "${{ steps.a.outputs.nikhar }}"
             
+        - name: Conditional Statements
+          if: ${{ steps.a.outputs.nikhar }} == 'true'
+          run: echo "Run SAST"
+            
        # - id: b
        #   run: |
        #    echo ::set-output name=result::value
