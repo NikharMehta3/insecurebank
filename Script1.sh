@@ -24,7 +24,7 @@ echo $p
 echo $p >> result.json
 #chmod +x script1.rb
 
-var=ruby script1.rb
+ruby script1.rb
 echo $var
 
 #echo $(ruby -e \'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')
