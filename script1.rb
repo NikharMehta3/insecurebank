@@ -1,4 +1,5 @@
 require "json"
 file = File.open "data.json"
 data = JSON.load file
-STDOUT.puts data["security"]["sastScan"]["enabled"]
+ENV['SOME_VAR'] = 'test'
+data["security"]["sastScan"]["enabled"]
