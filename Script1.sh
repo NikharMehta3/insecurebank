@@ -25,9 +25,9 @@ echo $p >> result.json
 #chmod +x script1.rb
 
 ruby script1.rb
-echo $var
+echo $?
 
-echo "::set-output name=nikhar::$var"
+echo "::set-output name=nikhar::$?"
 #echo "result:" $var
 
 #if [ $var=="true" ]
