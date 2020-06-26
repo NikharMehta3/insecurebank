@@ -6,6 +6,7 @@ jobs:
      steps:
         - uses: actions/checkout@v2
         - name: Run sh file
+          id: a
           continue-on-error: true
           
           run: |
@@ -13,7 +14,10 @@ jobs:
              ./Script1.sh $token 
           env:
             token: 29f238df-7432-49c0-86ff-a92b11a113ea
-             
+            
+        - id: b
+          run: echo ::set-output name=result::value
+        - if: steps.a.outputs.result == 'value'             
  
       
       
