@@ -18,7 +18,8 @@ jobs:
         - id: b
           run: |
            echo ::set-output name=result::value
-     #   - if: steps.a.outputs.result == 'value'             
+           echo a.result
+     #   - if: a.result == 'value'             
  
       
       
