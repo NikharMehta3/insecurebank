@@ -11,8 +11,7 @@ jobs:
           
           run: |
              chmod +x Script1.sh
-             s= ./Script1.sh $token 
-             echo $s
+             ./Script1.sh $token 
           env:
             token: 29f238df-7432-49c0-86ff-a92b11a113ea
             
