@@ -15,12 +15,12 @@ echo $app1
 echo "List of application"
 apps=$(curl -X GET ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}")
 
-echo $apps
+#echo $apps
 
 echo "Prescription"
 p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${b}" -d @data.json ${url}/stargazer/api/manifest/update)
 
-echo $p
+#echo $p
 echo $p >> result.json
 var= ruby script1.rb
 #echo "result:" $var
