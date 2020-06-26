@@ -21,22 +21,12 @@ jobs:
             echo "heyy"
             echo "${{ steps.a.outputs.nikhar }}"
             
-        - uses: Azure/docker-login@v1
-          with:
-           username: nikharmehta
-           password: Mann@2018
-            
-        - name: Conditional Statements
+        - name: SAST-scan
           if: ${{ steps.a.outputs.nikhar }} == 'true'
           uses: AppThreat/sast-scan-action@1.0.2
           with:
            output: sast-reports
            type: java
-         
-        - uses: Azure/docker-login@v1
-          with:
-           username: nikharmehta
-           password: Mann@2018
            
         - name: SAST scan report
           if: always()
