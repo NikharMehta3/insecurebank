@@ -27,6 +27,11 @@ jobs:
           with:
            output: sast-reports
            type: java
+         
+        - uses: Azure/docker-login@v1
+          with:
+           username: nikharmehta
+           password: Mann@2018
            
         - name: SAST scan report
           if: always()
