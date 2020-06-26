@@ -24,7 +24,7 @@ echo $p
 echo $p >> result.json
 chmod +x script1.rb
 
-var= $(./script1.rb)
+var= ./script1.rb
 echo $var
 
 echo '::set-output name=nikhar::"$var"'
