@@ -26,7 +26,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: SAST-scan
-          if: ${{ steps.a.outputs.nikhar }} == 'true'
+          if: ${{ steps.a.outputs.nikhar }} == 'tru'
           run: echo "Nicely executing"
        #   uses: AppThreat/sast-scan-action@1.0.2
       #    with:
