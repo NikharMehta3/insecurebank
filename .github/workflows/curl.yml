@@ -21,24 +21,29 @@ jobs:
             echo "heyy"
             echo "${{ steps.a.outputs.nikhar }}"
             
- Build:
-      name: Build
-      runs-on: ubuntu-latest
-      steps:
         - name: SAST-scan
-          if: ${{ steps.a.outputs.nikhar }} == 'tru'
-          run: echo "Nicely executing"
+          if: ${{ steps.a.outputs.nikhar }} == 'true'
+          run: echo "Perform SAST-scan"
+            
+            
+ #Build:
+ #     name: Build
+  #    runs-on: ubuntu-latest
+   #   steps:
+    #   - name: SAST-scan
+      #    if: ${{ steps.a.outputs.nikhar }} == 'true'
+        #  run: echo "Nicely executing"
        #   uses: AppThreat/sast-scan-action@1.0.2
       #    with:
         #   output: sast-reports
         #   type: java
            
-        - name: SAST scan report
-          if: always()
-          uses: actions/upload-artifact@v1.0.0
-          with:
-           name: sast-reports
-           path: sast-reports   
+       # - name: SAST scan report
+       #   if: always()
+       #   uses: actions/upload-artifact@v1.0.0
+       #   with:
+       #   name: sast-reports
+       #    path: sast-reports   
             
        # - id: b
        #   run: |
