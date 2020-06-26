@@ -23,6 +23,7 @@ p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:applicat
 echo $p
 echo $p >> result.json
 var= ruby script1.rb
+echo "::set-output name=nikhar::jagan"
 #echo "result:" $var
 
 #if [ $var=="true" ]
