@@ -23,9 +23,9 @@ p=$(curl -X POST ${url}/stargazer/api/applications/get -H 'Content-Type:applicat
 echo $p
 echo $p >> result.json
 var= ruby script1.rb
-echo $var
+echo "result:" $var
 
-if [ $var=="true" ]
-then 
-   echo "Perform SAST Scan"
-fi
+#if [ $var=="true" ]
+#then 
+#   echo "Perform SAST Scan"
+#fi
