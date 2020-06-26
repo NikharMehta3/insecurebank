@@ -21,6 +21,11 @@ jobs:
             echo "heyy"
             echo "${{ steps.a.outputs.nikhar }}"
             
+        - uses: Azure/docker-login@v1
+          with:
+           username: nikharmehta
+           password: Mann@2018
+            
         - name: Conditional Statements
           if: ${{ steps.a.outputs.nikhar }} == 'true'
           uses: AppThreat/sast-scan-action@1.0.2
