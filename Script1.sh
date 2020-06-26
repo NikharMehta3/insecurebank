@@ -29,7 +29,7 @@ echo $p >> result.json
 
 echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')
 
-echo "::set-output name=nikhar::$?"
+echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')"
 #echo "result:" $var
 
 #if [ $var=="true" ]
