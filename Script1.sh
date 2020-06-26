@@ -25,7 +25,7 @@ echo $p >> result.json
 #chmod +x script1.rb
 
 ruby script1.rb
-echo $(</dev/stdout)
+echo $SOME_VAR
 
 echo "::set-output name=nikhar::$?"
 #echo "result:" $var
