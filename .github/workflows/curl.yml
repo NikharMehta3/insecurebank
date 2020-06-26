@@ -23,7 +23,17 @@ jobs:
             
         - name: Conditional Statements
           if: ${{ steps.a.outputs.nikhar }} == 'true'
-          run: echo "Run SAST"
+          uses: AppThreat/sast-scan-action@1.0.2
+          with:
+           output: sast-reports
+           type: java
+           
+        - name: SAST scan report
+          if: always()
+          uses: actions/upload-artifact@v1.0.0
+          with:
+           name: sast-reports
+           path: sast-reports   
             
        # - id: b
        #   run: |
