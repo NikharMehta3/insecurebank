@@ -1,8 +1,8 @@
 on: push
 jobs:
-  Requests:
+ Requests:
      name: Request1
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      steps:
         - uses: actions/checkout@v2
         - name: Run sh file
@@ -21,6 +21,10 @@ jobs:
             echo "heyy"
             echo "${{ steps.a.outputs.nikhar }}"
             
+ Build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
         - name: SAST-scan
           if: ${{ steps.a.outputs.nikhar }} == 'true'
           uses: AppThreat/sast-scan-action@1.0.2
