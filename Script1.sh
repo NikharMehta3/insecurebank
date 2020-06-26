@@ -24,9 +24,10 @@ echo $p
 echo $p >> result.json
 #chmod +x script1.rb
 
-ruby script1.rb
-echo $SOME_VAR
+var=ruby script1.rb
+#echo $var
 
+#echo $(ruby -e \'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')
 
 echo "::set-output name=nikhar::$?"
 #echo "result:" $var
