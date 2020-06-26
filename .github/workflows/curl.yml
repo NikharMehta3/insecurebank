@@ -18,7 +18,7 @@ jobs:
         - id: b
           run: |
            echo ::set-output name=result::value
-           echo a.result
+           echo $(a.result)
      #   - if: a.result == 'value'             
  
       
