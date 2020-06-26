@@ -16,8 +16,9 @@ jobs:
             token: 29f238df-7432-49c0-86ff-a92b11a113ea
             
         - id: b
-          run: echo ::set-output name=result::value
-        - if: steps.a.outputs.result == 'value'             
+          run: |
+           echo ::set-output name=result::value
+     #   - if: steps.a.outputs.result == 'value'             
  
       
       
