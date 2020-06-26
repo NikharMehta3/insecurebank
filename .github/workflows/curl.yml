@@ -2,7 +2,7 @@ on: push
 jobs:
   Requests:
      name: Request1
-     runs-on: self-hosted
+     runs-on: ubuntu-latest
      steps:
         - uses: actions/checkout@v2
         - name: Run sh file
