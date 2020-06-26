@@ -24,10 +24,10 @@ echo $p
 echo $p >> result.json
 #chmod +x script1.rb
 
-ruby script1.rb
-echo $?
+var = $(ruby script1.rb)
+echo $var
 
-echo "::set-output name=nikhar::$?"
+echo "::set-output name=nikhar::$var"
 #echo "result:" $var
 
 #if [ $var=="true" ]
