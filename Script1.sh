@@ -27,6 +27,7 @@ echo $p >> result.json
 ruby script1.rb
 echo $SOME_VAR
 
+
 echo "::set-output name=nikhar::$?"
 #echo "result:" $var
 
