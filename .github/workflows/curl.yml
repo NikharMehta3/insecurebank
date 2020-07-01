@@ -27,7 +27,7 @@ jobs:
            output: reports
            type: java
             
-          #sastScan
+          
             
  #Build:
  #     name: Build
