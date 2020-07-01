@@ -31,7 +31,7 @@ echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load
 #echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')
 #echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')
 
-echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')"
+echo "::set-output name=sastScan::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')"
 #echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')"
 #echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')"
 #echo "result:" $var
