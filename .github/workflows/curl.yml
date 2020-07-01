@@ -24,7 +24,7 @@ jobs:
           if: ${{ steps.a.outputs.sastScan }} == 'true'
           uses: AppThreat/sast-scan-action@v1.0.0
           with:
-           output: reports
+           output: reports #report
            type: java
             
           
