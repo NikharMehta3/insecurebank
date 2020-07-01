@@ -21,7 +21,7 @@ jobs:
             echo "${{ steps.a.outputs.sastScan }}"
             
         - name: SAST-scan
-          if: ${{ steps.a.outputs.sastScan }} == 'false'
+          if: ${{ steps.a.outputs.sastScan }} == 'false' #if
           uses: AppThreat/sast-scan-action@v1.0.0
           with:
            type: java
