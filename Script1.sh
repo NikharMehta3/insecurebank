@@ -39,4 +39,4 @@ echo "::set-output name=sastScan::$(ruby -e 'require "json"; file = File.new "re
 #if [ $var=="true" ]
 #then 
 #   echo "Perform SAST Scan"
-#fi
+#f
