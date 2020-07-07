@@ -33,7 +33,7 @@ jobs:
         - name: DAST-scan
           if:  ${{ steps.a.outputs.dastScan  == 'true' }}
           run: echo "Perform DASTscan"
-          #if
+          
             
           
             
