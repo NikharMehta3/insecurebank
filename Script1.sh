@@ -28,12 +28,12 @@ echo $p >> result.json
 #echo $var
 
 echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')
-#echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')
-#echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')
+echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')
+echo $(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')
 
 echo "::set-output name=sastScan::$(ruby -e 'require "json"; file = File.new "result.json"; data = JSON.load file; puts data["security"]["sastScan"]["enabled"]')"
-#echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')"
-#echo "::set-output name=nikhar::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')"
+echo "::set-output name=scaScan::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["scaScan"]["enabled"]')"
+echo "::set-output name=dastScan::$(ruby -e 'require "json"; file = File.open "result.json"; data = JSON.load file; puts data["security"]["dastScan"]["enabled"]')"
 #echo "result:" $var
 
 #if [ $var=="true" ]
